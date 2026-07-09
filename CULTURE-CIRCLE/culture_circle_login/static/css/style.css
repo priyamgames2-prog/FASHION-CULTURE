@@ -1,0 +1,211 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+}
+
+/* ---------- OVERALL SPLIT LAYOUT ---------- */
+.page-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 100vh;
+    width: 100%;
+}
+
+/* ---------- LEFT: BRAND / PATTERN SIDE ---------- */
+.brand-side {
+    background:
+        radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.04) 0%, transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.03) 0%, transparent 45%),
+        repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.015) 0px, rgba(255, 255, 255, 0.015) 2px, transparent 2px, transparent 14px),
+        linear-gradient(160deg, #0d0d3a 0%, #050518 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6vw;
+}
+
+.brand-side-inner {
+    text-align: center;
+    max-width: 340px;
+}
+
+.logo-icon {
+    width: 73px;
+    height: 73px;
+    display: block;
+    margin: 0 auto 16px auto;
+    border-radius: 45px;
+}
+
+.brand-name {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: #ffffff;
+    font-size: 24px;
+    text-align: center;
+    white-space: nowrap;
+    margin-bottom: 14px;
+}
+
+.brand-tagline {
+    color: #a9a6bd;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* ---------- RIGHT: FULL PANEL LOGIN ---------- */
+.login-wrapper {
+    background-color: #f2ede4;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6vw;
+}
+
+.login-card {
+    width: 100%;
+    max-width: 380px;
+    text-align: center;
+}
+
+.subtitle {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-style: italic;
+    color: black;
+    
+    margin-bottom: 5px;
+    letter-spacing: 0.3px;
+}
+.desc{
+    color: #8a8a85;
+    margin-bottom: 36px;
+    font-size: 14px;
+    
+
+}
+
+.error-message {
+    background-color: #fbeaea;
+    border: 1px solid #e8b4b4;
+    color: #9a3b3b;
+    font-size: 13px;
+    padding: 10px 14px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group {
+    text-align: left;
+    margin-bottom: 22px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: #9a9a94;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.input-group input {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #d8d5cd;
+    padding: 8px 2px;
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+    color: #1a1a1a;
+    background: transparent;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.input-group input::placeholder {
+    color: #bcbab2;
+}
+
+.input-group input:focus {
+    border-bottom: 1px solid #1a1a1a;
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 28px;
+    font-size: 12px;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #6a6a64;
+    cursor: pointer;
+}
+
+.remember-me input {
+    width: auto;
+    cursor: pointer;
+}
+
+.forgot-link {
+    color: #6a6a64;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s ease;
+}
+
+.forgot-link:hover {
+    border-bottom: 1px solid #6a6a64;
+}
+
+.btn-submit {
+    width: 100%;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    border: none;
+    padding: 13px;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    font-family: 'Inter', sans-serif;
+}
+
+.btn-submit:hover {
+    background-color: #3a3a3a;
+}
+
+.signup-text {
+    margin-top: 24px;
+    font-size: 13px;
+    color: #8a8a85;
+}
+
+.signup-text a {
+    color: #1a1a1a;
+    text-decoration: none;
+    border-bottom: 1px solid #1a1a1a;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 860px) {
+    .page-wrap {
+        grid-template-columns: 1fr;
+    }
+
+    .brand-side {
+        display: none;
+    }
+}

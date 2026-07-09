@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Court Access — Login</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap');
+
+  :root{
+    --court-black:#0b0b0d;
+    --court-charcoal:#1c1c20;
+    --bulls-red:#d1291b;
+    --chi-red-deep:#8f1a10;
+    --cream:#f2ede4;
+    --gold:#c8a15a;
+    --line:#3a3a40;
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+
+  html,body{
+    height:100%;
+    font-family:'Inter', sans-serif;
+    background:var(--court-black);
+    color:var(--cream);
+    overflow:hidden;
+  }
+
+  .wrap{
+    display:grid;
+    grid-template-columns: 1.15fr 1fr;
+    height:100vh;
+    width:100%;
+  }
+
+  /* ---------- LEFT: COURT / HERO PANEL ---------- */
+  .hero{
+    position:relative;
+    background:
+      radial-gradient(ellipse at 30% 20%, rgba(209,41,27,0.25), transparent 55%),
+      linear-gradient(180deg, #141416 0%, #0b0b0d 70%);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:flex-start;
+    padding:6vw;
+    overflow:hidden;
+  }
+
+  /* hardwood court floor texture at bottom */
+  .court-floor{
+    position:absolute;
+    bottom:0; left:0; right:0;
+    height:38%;
+    background:
+      repeating-linear-gradient(90deg, #2a1c12 0 60px, #24170f 60px 62px),
+      linear-gradient(180deg, #1e140d, #150e09);
+    transform: perspective(400px) rotateX(35deg);
+    transform-origin: bottom;
+    opacity:0.55;
+    border-top:2px solid rgba(200,161,90,0.25);
+  }
+
+  .center-circle{
+    position:absolute;
+    bottom:6%; left:50%;
+    width:520px; height:260px;
+    border:2px solid rgba(242,237,228,0.15);
+    border-radius:50%;
+    transform:translateX(-50%) perspective(400px) rotateX(60deg);
+  }
+
+  .eyebrow{
+    font-size:12px;
+    letter-spacing:0.28em;
+    text-transform:uppercase;
+    color:var(--gold);
+    font-weight:600;
+    z-index:2;
+    margin-bottom:18px;
+  }
+
+  h1.headline{
+    font-family:'Anton', sans-serif;
+    font-weight:400;
+    text-transform:uppercase;
+    line-height:0.92;
+    font-size:clamp(48px, 6.2vw, 96px);
+    letter-spacing:0.01em;
+    z-index:2;
+    color:var(--cream);
+  }
+  h1.headline span{
+    color:var(--bulls-red);
+    -webkit-text-stroke: 1.5px var(--cream);
+  }
+
+  .sub{
+    z-index:2;
+    max-width:420px;
+    margin-top:22px;
+    color:#b9b6ad;
+    font-size:15px;
+    line-height:1.6;
+  }
+
+  /* ---------- SNEAKER ILLUSTRATION ---------- */
+  .sneaker-stage{
+    position:absolute;
+    right:6%;
+    top:50%;
+    width:46%;
+    max-width:560px;
+    transform:translateY(-50%);
+    z-index:3;
+    animation: float 4.5s ease-in-out infinite;
+    filter: drop-shadow(0 30px 40px rgba(0,0,0,0.6));
+  }
+  @keyframes float{
+    0%,100%{ transform:translateY(-52%) rotate(-3deg); }
+    50%{ transform:translateY(-46%) rotate(1deg); }
+  }
+
+  .shadow-blob{
+    position:absolute;
+    right:9%;
+    bottom:14%;
+    width:34%;
+    max-width:420px;
+    height:36px;
+    background:radial-gradient(ellipse at center, rgba(0,0,0,0.55), transparent 70%);
+    z-index:2;
+    animation: shrink 4.5s ease-in-out infinite;
+  }
+  @keyframes shrink{
+    0%,100%{ transform:scale(0.85); opacity:0.5;}
+    50%{ transform:scale(1); opacity:0.75;}
+  }
+
+  .lace-glow{
+    position:absolute;
+    inset:0;
+  }
+
+  /* floating particles = court dust / motion lines */
+  .motion-line{
+    position:absolute;
+    height:2px;
+    background:linear-gradient(90deg, transparent, rgba(242,237,228,0.5), transparent);
+    animation: drift 3s linear infinite;
+  }
+  @keyframes drift{
+    0%{ opacity:0; transform:translateX(0);}
+    30%{ opacity:1;}
+    100%{ opacity:0; transform:translateX(-60px);}
+  }
+
+  .stat-row{
+    z-index:2;
+    display:flex;
+    gap:36px;
+    margin-top:44px;
+  }
+  .stat{
+    border-left:2px solid var(--bulls-red);
+    padding-left:12px;
+  }
+  .stat b{
+    display:block;
+    font-family:'Anton', sans-serif;
+    font-size:26px;
+    color:var(--cream);
+  }
+  .stat span{
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:0.12em;
+    color:#8a8780;
+  }
+
+  /* ---------- RIGHT: LOGIN PANEL ---------- */
+  .panel{
+    background:var(--cream);
+    color:var(--court-black);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding:6vw;
+    position:relative;
+  }
+
+  .panel::before{
+    content:"";
+    position:absolute;
+    top:0; right:0;
+    width:6px; height:100%;
+    background:repeating-linear-gradient(180deg, var(--bulls-red) 0 24px, var(--gold) 24px 26px, transparent 26px 50px);
+    opacity:0.7;
+  }
+
+  .brandmark{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:48px;
+  }
+  .brandmark .dot{
+    width:12px;height:12px;border-radius:50%;
+    background:var(--bulls-red);
+  }
+  .brandmark span{
+    font-family:'Anton', sans-serif;
+    letter-spacing:0.08em;
+    font-size:15px;
+    text-transform:uppercase;
+  }
+
+  h2.title{
+    font-family:'Anton', sans-serif;
+    font-size:34px;
+    text-transform:uppercase;
+    margin-bottom:8px;
+  }
+  p.desc{
+    font-size:14px;
+    color:#5c584f;
+    margin-bottom:36px;
+  }
+
+  form{ display:flex; flex-direction:column; gap:18px; max-width:380px; }
+
+  label{
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:0.1em;
+    font-weight:600;
+    color:#5c584f;
+    margin-bottom:6px;
+    display:block;
+  }
+
+  input{
+    width:100%;
+    padding:14px 16px;
+    border:1.5px solid #d8d3c6;
+    border-radius:6px;
+    font-size:14px;
+    font-family:'Inter',sans-serif;
+    background:#fff;
+    transition:border-color 0.15s ease, box-shadow 0.15s ease;
+  }
+  input:focus{
+    outline:none;
+    border-color:var(--bulls-red);
+    box-shadow:0 0 0 3px rgba(209,41,27,0.15);
+  }
+
+  .row-between{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-size:12px;
+    color:#6b675e;
+  }
+  .row-between a{ color:var(--bulls-red); text-decoration:none; font-weight:600;}
+
+  button.cta{
+    margin-top:8px;
+    padding:15px 20px;
+    background:var(--court-black);
+    color:var(--cream);
+    border:none;
+    border-radius:6px;
+    font-family:'Anton', sans-serif;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    font-size:15px;
+    cursor:pointer;
+    transition: transform 0.15s ease, background 0.15s ease;
+  }
+  button.cta:hover{
+    background:var(--bulls-red);
+    transform:translateY(-1px);
+  }
+  button.cta:active{ transform:translateY(0); }
+
+  .foot{
+    margin-top:28px;
+    font-size:13px;
+    color:#6b675e;
+  }
+  .foot a{ color:var(--court-black); font-weight:600; text-decoration:none; border-bottom:1.5px solid var(--gold);}
+
+  @media (max-width: 860px){
+    .wrap{ grid-template-columns: 1fr; }
+    .hero{ display:none; }
+    .panel{ padding:10vw 8vw; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <!-- HERO / LEFT -->
+  <div class="hero">
+    <div class="court-floor"></div>
+    <div class="center-circle"></div>
+
+    <div class="eyebrow">Season Access · No. 23</div>
+    <h1 class="headline">Lace up.<br>Log <span>in</span>.</h1>
+    <p class="sub">Your locker, your drops, your history — one court-side account for everything you've laced up for.</p>
+
+    <div class="stat-row">
+      <div class="stat"><b>1985</b><span>First Drop</span></div>
+      <div class="stat"><b>40+</b><span>Retro Colorways</span></div>
+      <div class="stat"><b>23</b><span>Your Number</span></div>
+    </div>
+
+    <!-- illustrated high-top sneaker -->
+    <svg class="sneaker-stage" viewBox="0 0 400 260" xmlns="http://www.w3.org/2000/svg">
+      <!-- sole -->
+      <path d="M30 210 Q40 235 90 238 L340 238 Q375 236 380 210 Q382 200 365 198 L60 196 Q34 198 30 210 Z" fill="#f2ede4" stroke="#0b0b0d" stroke-width="3"/>
+      <!-- midsole line -->
+      <path d="M35 205 Q200 218 375 204" fill="none" stroke="#c8a15a" stroke-width="4" stroke-linecap="round"/>
+      <!-- upper body -->
+      <path d="M55 200 Q40 130 95 95 Q120 60 175 45 Q230 30 270 55 Q320 65 345 110 Q365 140 362 175 Q360 195 340 198 L60 200 Z" fill="#d1291b"/>
+      <!-- toe box -->
+      <path d="M55 200 Q42 165 60 135 Q80 108 110 100 Q90 140 90 175 Q92 192 100 200 Z" fill="#8f1a10"/>
+      <!-- ankle collar -->
+      <path d="M270 55 Q320 65 345 110 Q365 140 362 175 Q358 150 335 120 Q305 78 265 68 Z" fill="#1c1c20"/>
+      <!-- swoosh-free side panel accent (generic stripe, not brand logo) -->
+      <path d="M110 150 Q170 175 260 145" fill="none" stroke="#f2ede4" stroke-width="10" stroke-linecap="round"/>
+      <path d="M110 150 Q170 175 260 145" fill="none" stroke="#0b0b0d" stroke-width="14" stroke-linecap="round" opacity="0.08"/>
+      <!-- laces -->
+      <g stroke="#f2ede4" stroke-width="4" stroke-linecap="round">
+        <line x1="150" y1="70" x2="185" y2="90"/>
+        <line x1="185" y1="70" x2="150" y2="90"/>
+        <line x1="165" y1="90" x2="200" y2="110"/>
+        <line x1="200" y1="90" x2="165" y2="110"/>
+        <line x1="180" y1="112" x2="215" y2="132"/>
+        <line x1="215" y1="112" x2="180" y2="132"/>
+      </g>
+      <!-- lace loops -->
+      <g fill="none" stroke="#c8a15a" stroke-width="3">
+        <circle cx="150" cy="70" r="4"/><circle cx="185" cy="70" r="4"/>
+        <circle cx="165" cy="90" r="4"/><circle cx="200" cy="90" r="4"/>
+        <circle cx="180" cy="112" r="4"/><circle cx="215" cy="112" r="4"/>
+      </g>
+      <!-- tongue label -->
+      <rect x="230" y="70" width="26" height="16" rx="2" fill="#c8a15a"/>
+    </svg>
+
+    <div class="shadow-blob"></div>
+  </div>
+
+  <!-- LOGIN PANEL / RIGHT -->
+  <div class="panel">
+    <div class="brandmark">
+      <div class="dot"></div>
+      <span>Court&nbsp;Access</span>
+    </div>
+
+    <h2 class="title">Welcome back</h2>
+    <p class="desc">Sign in to check drop alerts, order history, and your saved sizes.</p>
+
+    <form onsubmit="return false;">
+      <div>
+        <label for="email">Email</label>
+        <input id="email" type="email" placeholder="you@example.com" required>
+      </div>
+      <div>
+        <label for="password">Password</label>
+        <input id="password" type="password" placeholder="••••••••" required>
+      </div>
+      <div class="row-between">
+        <label style="display:flex;align-items:center;gap:6px;font-weight:400;text-transform:none;letter-spacing:0;">
+          <input type="checkbox" style="width:auto;padding:0;"> Keep me signed in
+        </label>
+        <a href="#">Forgot password?</a>
+      </div>
+      <button class="cta">Enter the court</button>
+    </form>
+
+    <p class="foot">New here? <a href="#">Create an account</a></p>
+  </div>
+
+</div>
+
+</body>
+</html>
