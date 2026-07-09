@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fashion Culture — Sign In</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="wrap">
+
+  <!-- LEFT: pattern / brand side -->
+  <div class="brand-side">
+    <div class="brand-mark">CULT<br>URE</div>
+    <h1 class="wordmark">Fashion Culture</h1>
+    <p class="tagline">Curated drops, editorial style, and members-only access — all in one place.</p>
+  </div>
+
+  <!-- RIGHT: full panel login -->
+  <div class="panel">
+    <div class="panel-inner">
+
+      <div class="panel-brand">
+        <div class="dot"></div>
+        <span>Fashion Culture</span>
+      </div>
+
+      <h2 class="title">Sign in to your account</h2>
+      <p class="desc">Welcome back — enter your details to continue.</p>
+
+      {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            <div class="error-message">
+                {% for message in messages %}
+                <p>{{ message }}</p>
+                {% endfor %}
+            </div>
+            {% endif %}
+            {% endwith %}
+
+      <form method="POST" action="{{ url_for('login') }}">
+        <div>
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="name@example.com" required>
+        </div>
+        <div>
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" placeholder="Enter your password" required>
+        </div>
+        <div class="row-between">
+          <label class="check"><input type="checkbox" name="remember" style="width:auto;"> Remember me</label>
+          <a href="#">Forgot password?</a>
+        </div>
+        <button type="submit" class="cta">Sign in</button>
+      </form>
+
+      <p class="foot">Don't have an account? <a href="#">Create one</a></p>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
