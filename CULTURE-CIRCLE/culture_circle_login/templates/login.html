@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIGN-UP-CC</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&family=Inter:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <div class="page-wrap">
+
+        <!-- LEFT: pattern side -->
+        <div class="brand-side">
+            <div class="brand-side-inner">
+                <div class="logo"><img src="{{ url_for('static', filename='images/culture_circle_logo.jpeg') }}"
+                        alt="Culture Circle Logo" class="logo-icon"></div>
+                <div class="brand-name">FASHION CULTURE</div>
+                <p class="brand-tagline">Curated drops, editorial style, and members-only access — all in one place.</p>
+            </div>
+        </div>
+
+        <!-- RIGHT: login panel, full height/width -->
+        <div class="login-wrapper">
+            <div class="login-card">
+                <p class="subtitle">Sign in your account</p>
+                <p class="desc">Welcome back -- Enter your details to continue</p>
+
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                <div class="error-message">
+                    {% for message in messages %}
+                    <p>{{ message }}</p>
+                    {% endfor %}
+                </div>
+                {% endif %}
+                {% endwith %}
+
+                <form method="POST" action="{{ url_for('login') }}">
+                    <div class="input-group">
+                        <label for="email">EMAIL</label>
+                        <input type="email" id="email" name="email" placeholder="name@example.com" required
+                            autofocus>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="password">PASSWORD</label>
+                        <input type="password" id="password" name="password" placeholder="Enter your password"
+                            required>
+                    </div>
+
+                    <div class="form-row">
+                        <label class="remember-me">
+                            <input type="checkbox" name="remember">
+                            <span>Remember me</span>
+                        </label>
+                        <a href="#" class="forgot-link">Forgot password?</a>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Sign In</button>
+                </form>
+
+                <p class="signup-text">Don't have an account? <a href="#">Create one</a></p>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

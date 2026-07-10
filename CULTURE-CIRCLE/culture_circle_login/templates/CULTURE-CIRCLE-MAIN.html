@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Get Lowest Prices For Jordans,Watches and Perfumes</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Martian Mono;
+        }
+
+        .header {
+            background-color: #fff;
+            padding: 15px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            box-shadow: 0 0 5px 0 rgb(0 0 0 / 39%);
+
+
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 45px;
+            padding-left: 25px;
+            width: 45px;
+        }
+
+        .nav {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav li {
+            margin-right: 20px;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        .hero {
+            background-color: #eee;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .hero h1 {
+            font-size: 4em;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .hero img {
+            width: 1425px;
+            object-fit: cover;
+
+            object-position: top;
+        }
+
+        .cta {
+            background-color: #000;
+            color: #fff;
+            padding: 15px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin: 50px 0;
+        }
+
+        .item {
+            text-align: center;
+        }
+
+        .item img {
+            width: 200px;
+            height: auto;
+            transition: transform .5s;
+            transition-duration: 0.5s;
+            transition-timing-function: ease;
+            transition-delay: 0s;
+            transition-property: transform;
+            transition-behavior: normal;
+            object-fit: contain;
+            object-position: center;
+            cursor: pointer;
+        }
+
+        .item img:hover {
+            width: 210px;
+            transform: scale(1.1s);
+            transition: transform .5s;
+            transition-duration: 0.5s;
+            transition-timing-function: ease;
+            transition-delay: 0s;
+            transition-property: transform;
+            transition-behavior: normal;
+
+        }
+
+        h2 {
+            font-size: .8em;
+            margin-bottom: 5px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-top: 10px;
+        }
+
+        p {
+            font-size: .8em;
+            font-weight: 100;
+            margin-top: 5px;
+        }
+
+        .view {
+            
+            margin-top: 24px;
+            text-align: center;
+            background: #fff;
+            color: #000;
+            font-size: .6rem;
+            font-weight: 600;
+            border: .5px solid #000;
+            padding: 10px 16px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            display: inline-block;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .view:hover {
+            background-color: #000;
+            color: #fff;
+            font-size: 15px;
+            width: 150px;
+        }
+
+        .price-banner {
+            width: 100%;
+            height: 100%;
+        }
+
+        .price-banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .price-drop-outer {
+            background-image: url(https://culture-cirlce-static-dge7g8b8eue6fvcv.z02.azurefd.net/static/images/exclusive-banner.jpeg);
+            height: 300px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .price-drop-div {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: start;
+            width: 50%;
+            opacity: .8;
+        }
+
+        .price-drop-text {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            color: #ccd1d2;
+        }
+
+        .price-drop-input {
+            display: flex;
+            width: 40%;
+            margin-top: 8px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card {
+            width: 371px;
+            height: 471px;
+            margin: 10px;
+            padding: 10px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .card-button {
+            border-radius: 8px;
+            background: #ffffff8f;
+            padding: 8px 1rem;
+            color: #000;
+            width: 40%;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .steal-brands {
+            display: grid;
+            align-items: center;
+            justify-content: center;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            opacity: .4;
+            margin-top: 3rem;
+            margin: .5rem;
+        }
+
+        .steal-brands img {
+            width: 32px;
+            height: 34px;
+        }
+
+        .pngs {
+            text-align: center;
+            color: #212529;
+            gap: 300px;
+        }
+
+        .pngs img {
+            width: 32px;
+            height: 34px;
+            transition: transform .5s;
+            transition-duration: 0.5s;
+            transition-timing-function: ease;
+            transition-delay: 0s;
+            transition-property: transform;
+            transition-behavior: normal;
+            object-fit: contain;
+            object-position: center;
+
+
+        }
+
+        .png-container {
+            display: flex;
+            justify-content: center;
+            gap: 300px;
+            margin: 50px 0;
+            color: #212529;
+        }
+
+        .city-text {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            overflow: hidden;
+            width: 100%;
+            padding: 1rem;
+        }
+
+        .culture-global {
+            font-size: 10vw;
+            font-weight: bold;
+            letter-spacing: 3px;
+            background: linear-gradient(360deg, rgba(255, 255, 255, 1) 0, rgba(200, 200, 200, 0.8) 80%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-align: center;
+            margin-bottom: 0 ! important;
+            margin-top: 0 !important;
+        }
+
+        .global-content {
+            justify-content: center ! important;
+            margin-top: -5%;
+            display: flex !important;
+        }
+
+        .global-grid {
+            padding: 1rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 10px;
+            margin: 10px;
+            width: 80%;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .culture-container {
+            max-width: 1320px;
+            margin-top: 3rem !important;
+        }
+
+        .culture-content {
+            justify-content: center !important;
+            text-align: center !important;
+            display: flex !important;
+
+        }
+
+        .grails-container {
+            justify-content: center ! important;
+            margin-top: -5%;
+            display: flex !important;
+        }
+
+        .grails-container-grid {
+            padding: 1rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            gap: 10px;
+            margin: 10px;
+            width: 200px;
+            height: 200px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container-end {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 20px;
+            background-color: #000;
+            color: #fff;
+            margin-top: 3rem !important;
+            font-family: montserrat;
+        }
+
+        .row {
+            --bs-gutter-x: 1.5rem;
+            padding-top: -2rem !important;
+            padding-bottom: 3rem !important;
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: calc(var(--bs-gutter-y)* -1);
+            margin-right: calc(var(--bs-gutter-x)* -.5);
+            margin-left: calc(var(--bs-gutter-x)* -.5);
+            font-family: montserrat;
+        }
+
+        .col-row {
+            flex: 0 0 auto;
+            width: 25%;
+            max-width: 100%;
+            padding-right: calc(var(--bs-gutter-x)* 3);
+            padding-left: calc(var(--bs-gutter-x)* 1);
+            margin-top: var(--bs-gutter-y);
+        }
+
+        .col-mb {
+            margin-bottom: 1rem !important;
+            flex: 1 0 0;
+        }
+
+        .footer-heading {
+            color: #f94c01;
+            font-size: .85rem;
+            margin-bottom: .5rem !important;
+            margin-top: 0;
+            font-weight: 500;
+            width: 95px;
+            font-family: Montserrat;
+
+        }
+
+        .list-style {
+            padding-left: 0;
+            list-style: none;
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        .li {
+            margin-bottom: .5rem !important;
+            text-transform: uppercase;
+            width: 306px;
+            font-family: Montserrat;
+            cursor: pointer;
+        }
+
+        .li:hover {
+            color: #18bcbd;
+        }
+
+        .item1 {
+            padding: 1rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 10px;
+            margin: 10px;
+            width: 80%;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .global-grid1 {
+            padding: 0px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            gap: 10px;
+            margin: -30px;
+            width: 80%;
+            justify-content: center;
+            height: 200px;
+            align-items: center;
+        }
+        .price-tag{
+            font-size: 15px;
+            font-style: bold;
+            font-family: Martiana Mono;
+            
+        }
+        .menu-link {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+        font-family: "Times New Roman", serif;
+        }
+
+       .menu-link:hover {
+        color: #18bcbd;
+        text-decoration: none;
+       }
+       .copy_container{
+        font-family: montserrat;
+        font-size: 16px;
+       }
+
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="https://media.licdn.com/dms/image/v2/D4D0BAQHx97w2cnu0GA/company-logo_200_200/company-logo_200_200/0/1687244553808/culture_circle_logo?e=2147483647&v=beta&t=RS7to56jrk39EFhRpd224p10ccuRj9n7bINIhFnARH4"
+                alt="Cult Ure Logo">
+        </div>
+        <nav class="nav">
+            <li><a href="CULTURE-CIRCLE-MAIN.html">HOME</a>
+            </li>
+            <li><a href="#">CUSTOMS</a></li>
+            <li><a href="#">SNEAKERS</a></li>
+            <li><a href="#">STREETWEAR</a></li>
+            <li><a href="{{ url_for('contact') }}">CONTACT US</a>
+            <li><a href="#">FOR SELLERS</a></li>
+            <li><a href="#">FOR FAQ</a></li>
+            <li><a href="#">TRACK ORDER</a></li>
+        </nav>
+    </header>
+    <section class="hero">
+        <img src="https://cdn.culture-circle.com/media/New%20Home%20Banners/alankoch_banner_s_desktop.webp"
+            alt="Black Friday Sale">
+    </section>
+
+    <h1 style="right: 50%; left:50%;">
+        <center>
+            <img
+                src="">
+            <p class="section heading" style="font-family: croissant one;">
+            </p>
+    </h1>
+    </center>
+
+    <div class="container">
+        <div class="item">
+            <img src="https://cdn.shopify.com/s/files/1/0570/7389/3509/files/bvtomfum994_179293_ombre_leather_parfum.webp?v=1778516556"
+                alt="Tom Ford Ombre Leather Parfum">
+            <h2>TOM FORD OMBRE LEATHER <br>PARFUM</h2>
+            <p class="price-tag">
+                $9,512
+            </p>
+        </div>
+        <div class="item">
+            <img src="https://cdn.shopify.com/s/files/1/0570/7389/3509/files/appbcamttigr_17120_untitled_20design_20_202026_01_07t032135_840.webp?v=1778499669"
+                alt="CASIO TIFFANY ANALOG MTP1302D-<br>
+                2A2V">
+            <h2>Casio Tiffany Analog <br>MTP1302D-2A2V</h2>
+            <p class="price-tag">$4,848</p>
+        </div>
+        <div class="item">
+            <img src="https://cdn.shopify.com/s/files/1/0570/7389/3509/files/gmteer207_3245107_untitled_design_2026_04_22t152552_518.webp?v=1778523890"
+                alt="SEIKO MOD GMT ROOTBEER">
+            <h2>Seiko Mod Gmt Rootbeer</h2>
+            <p class="price-tag">$14,399</p>
+        </div>
+        
+        <div class="item">
+            <img src="https://cdn.culture-circle.com/media/img_url/Untitled_design_-_2026-04-29T173832.180.png"
+                alt="SEIKO MOD GMT BATMAN">
+            <h2>SEIKO Mod GMT BATMAN</h2>
+            <p class="price-tag">$16,472</p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="item">
+            <img src="https://cdn.shopify.com/s/files/1/0570/7389/3509/t/1/assets/02-04-2025-202143-dulopa_photo2.jpeg"
+                alt="NIKE LOW DUNK PANDA" style="height: 200px;">
+            <h2>Nike Low Dunk Panda</h2>
+            <p class="price-tag">$ 8,700</p>
+        </div>
+        <div class="item">
+            <a href="https://www.culture-circle.com/products/all/dunk-low-grey-fog"><img
+                    src="https://cdn.shopify.com/s/files/1/0570/7389/3509/files/bvdiomen692_177874_1747036772_l_removebg_preview.webp?v=1778501979"
+                    alt="DIOR DAUVAGE PARFUM FOR MEN"></a>
+            <h2>Dior Sauvage Parfum for Men</h2>
+            <p class="price-tag">$ 4,640</p>
+        </div>
+        <div class="item">
+            <img src="https://cdn.shopify.com/s/files/1/0570/7389/3509/files/wholued4163e_195944_updatedsizeofroyalblue.webp?v=1778524783" style="height: 190px;"
+                alt="WHOOP 5.0 PEAK COREKNIT(ROYAL BLUE)">
+            <h2 style="padding-top: 10px;">Whoop 5.0 Peak CoreKnit<br>(Royal Blue)</h2>
+            <p class="price-tag">$ 9,350</p>
+        </div>
+        <div class="item">
+            <img src="https://cdn.shopify.com/s/files/1/0570/7389/3509/t/1/assets/03-04-2025-040232-bnisbdulocoorlo28sbo_photo2.jpeg"
+                alt="Concepts X Nike SB Dunk Low Ornage Lobster" style="height: 200px;">
+            <h2>Concepts X Nike SB Dunk Low<br>
+                Ornage Lobster</h2>
+            <p class="price-tag">$ 33,798</p>
+        </div>
+        
+    </div>
+    <div class="container">
+        <div class="item">
+            <img src="https://marketplace.mainstreet.co.in/cdn/shop/files/Artboard43.png?v=1761550313&width=1380"
+                alt="Adidas Samba OG White Black Gum ">
+            <h2>Adidas Samba OG White <br>Black Gum</h2>
+            <p class="price-tag">$ 9,599</p>
+        </div>
+        <div class="item">
+            <img src="https://crepdogcrew.com/cdn/shop/files/EditsbyAhmar01_d2205fc8-cbbf-45cf-af06-ccf72471b136.png?v=1755096454&width=600"
+                alt="adidas yeezy from RNR MX Granite">
+            <h2>adidas yeezy from RNR MX <br>Granite</h2>
+            <p>$ 7,999</p>
+        </div>
+        <div class="item">
+            <img src="https://www.kicksmachine.com/cdn/shop/files/adidas-Yeezy-Slide-Orange-Product.webp?v=1765101186&width=500"
+                alt="Yeezy Slide Enflame Orange" style="height: 200px;">
+            <h2>Yeezy Slide Enflame Orange</h2>
+            <p>$ 25,999</p>
+        </div>
+        <div class="item">
+            <img src="https://cdn.culture-circle.com/media/img_url/Untitled_design_-_2026-04-01T130646.596.png"
+                alt="LV Flower 40mm Reversible Belt">
+            <h2>LV Flower 40mm <br>Reversible Belt</h2>
+            <p>$ 60,521</p>
+        </div>
+
+    </div>
+    <center>
+        <button class="view">View All</button>
+    </center>
+    <h1>
+        <center>
+            <img
+                src="https://culture-cirlce-static-dge7g8b8eue6fvcv.z02.azurefd.net/static/images/heading_banners/culture-drops-desktop.jpg">
+    </h1>
+    </center>
+    <div class="container">
+        <div class="item">
+            <img src="https://cdn.shopify.com/s/files/1/0623/3846/6014/files/Air-Jordan-1-Retro-Low-OG-SP-Travis-Scott-Olive-W-Product_a7ef0619-c9c9-4c9d-9e66-90d93890b1c5.webp?v=1770211133"
+                alt="Travis Scott x Air Jordan 1 low Og Olive">
+            <h2>Travis Scott x Air Jordan 1<br> low Og Olive</h2>
+            <p>$ 62,999</p>
+        </div>
+        <div class="item">
+            <img src="https://www.superkicks.in/cdn/shop/files/IH6820_1.png?v=1779707560&width=713"
+                alt="Adidas Orignals Samba Og 'Cloud White' " style="height: 142.84px; width: 200px;">
+            <h2>Adidas Orignals Samba Og <br>
+                'Cloud White'</h2>
+            <p>$ 6,699</p>
+        </div>
+        <div class="item">
+            <img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQdrF8KnBkgO5f8S3pxPtPNDUlGe5UA_uiFgynyN0OvFQ3oH01RP5aCV0mFOpn5vpkyNtuXl-HC"
+                alt="Ambush x Nike Air Force 1 Low Phantom" style="height: 142.48px;">
+            <h2>Ambush x Nike Air Force 1 Low Phantom</h2>
+            <p>$ 16,799</p>
+        </div>
+        <div class="item">
+            <img src="https://cdn.shopify.com/s/files/1/0570/7389/3509/files/bvtomfum994_179293_ombre_leather_parfum.webp?v=1778516556"
+                alt="Tom Ford Ombre Leather Parfum" style="height: 142.48px;">
+            <h2>Tom Ford Ombre Leather Parfum</h2>
+            <p style="font-weight: bolder;">Sold Out</p>
+        </div>
+    </div>
+    <section class="price-banner">
+        <img class="price-banner img"
+            src="https://culture-cirlce-static-dge7g8b8eue6fvcv.z02.azurefd.net/static/images/home/app-banner-desktop.jpeg"
+            alt="price-banner">
+    </section>
+    <div class="city-div">
+        <div class="city-text">
+            <div class="div-culture">
+                <center>
+                    <h2
+                        style="margin-bottom: 0 !important; margin-top: 3rem !important; font-weight:600; letter-spacing: 3px; font-size: 2rem;">
+                        CULTURE CIRCLE
+                    </h2>
+                </center>
+                <h2 class="culture-global">EXCLUSIVE</h2>
+                <div class="global-content">
+                    <div class="global-grid1">
+                        <img src="https://image.goat.com/750/attachments/product_template_pictures/images/103/626/798/original/1474000_00.png.png"
+                            style="width: 200px; height: 200px;">
+                        <img src="https://cdn.shopify.com/s/files/1/0570/7389/3509/files/gmteer207_3245107_untitled_design_2026_04_22t152552_518.webp?v=1778523890"
+                            style="width: 200px; height: 200px;">
+                        <img src="https://cdn.culture-circle.com/media/cc_images_url_creator/28%20Oct/29%20Oct/Untitled%20design%20-%202025-10-30T133701.661.png"
+                            style="width: 200px; height: 200px;">
+                        <img src="https://cdn.shopify.com/s/files/1/0570/7389/3509/files/bvdiomen692_177874_1747036772_l_removebg_preview.webp?v=1778501979                            "
+                            style="width: 200px; height: 200px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="price-drop-outer">
+        <div class="price-drop-div">
+            <div class="price-drop-text">
+                <h2>BE THE FIRST IN LINE<br>For Rare Cops, Price Drops and the Latest Launches!<br><br>
+                    Download our app to get notified!<br><br>
+                    <img src="play store.png" style="cursor: pointer;">
+                </h2>
+
+            </div>
+        </div>
+
+    </div>
+    <div class="city-div">
+        <div class="city-text">
+            <div class="div-culture">
+                <center>
+                    <h2
+                        style="margin-bottom: 0 !important; margin-top: 3rem !important; font-weight:600; letter-spacing: 3px; font-size: 2rem;">
+
+                    </h2>
+                </center>
+
+                <h2 class="culture-global">GRAILS</h2>
+            </div>
+        </div>
+
+    </div>
+    <div class="grails-container">
+        <div class="grails-container-grid">
+            <img src="https://culture-cirlce-static-dge7g8b8eue6fvcv.z02.azurefd.net/products/yebo35v2bo/yebo35v2bo_photo1.png"
+                style="width: 200px; height: 200x;">
+            <img src="https://culture-cirlce-static-dge7g8b8eue6fvcv.z02.azurefd.net/products/yebo35v2sa/yebo35v2sa_photo1.png"
+                style="width: 200px; height: 200px;">
+            <img src="https://culture-cirlce-static-dge7g8b8eue6fvcv.z02.azurefd.net/products/adye35v2cabe/adye35v2cabe_photo1.png"
+                style="width: 200px; height: 200px;">
+            <img src="https://culture-cirlce-static-dge7g8b8eue6fvcv.z02.azurefd.net/products/yebo35v2sa/yebo35v2sa_photo1.png"
+                style="width: 200px; height: 200px;">
+            <img src="https://culture-cirlce-static-dge7g8b8eue6fvcv.z02.azurefd.net/products/badorsaogclwh/badorsaogclwh_photo1.png"
+                style="width: 200px; height: 200px;">
+
+
+
+        </div>
+    </div>
+
+
+    <div class="card-container">
+        <div class="card">
+
+            <img src="https://culture-cirlce-static-dge7g8b8eue6fvcv.z02.azurefd.net/static/images/home/shop_mens.jpeg"
+                style="width: 371px; height: 472px;">
+
+
+        </div>
+        <div class="card">
+            <img src="https://culture-cirlce-static-dge7g8b8eue6fvcv.z02.azurefd.net/static/images/home/shop_womens.jpeg"
+                style="width: 371px; height: 472px;">
+
+
+        </div>
+
+
+
+    </div>
+    <div class="png-container">
+        <div class="pngs">
+            <img src="https://culture-cirlce-static-dge7g8b8eue6fvcv.z02.azurefd.net/static/images/cart.png"
+                alt="Yeezy slodes bone 2022">
+            <h2 style="font-size:12px;">LARGEST<br>COLLECTION</h2>
+
+        </div>
+        <div class="pngs">
+            <img src="https://culture-cirlce-static-dge7g8b8eue6fvcv.z02.azurefd.net/static/images/money.png"
+                alt="Yeezy slodes bone 2022">
+            <h2 style="font-size:12px;">LOWEST<br>PRICES</h2>
+
+        </div>
+        <div class="pngs">
+            <img src="https://culture-cirlce-static-dge7g8b8eue6fvcv.z02.azurefd.net/static/images/badge.png"
+                alt="Yeezy slodes bone 2022">
+            <h2 style="font-size:12px;">GUARANTEED<br>AUTHENTICITY</h2>
+
+        </div>
+        <div class="pngs">
+            <img src="https://culture-cirlce-static-dge7g8b8eue6fvcv.z02.azurefd.net/static/images/truck.png"
+                alt="Yeezy slodes bone 2022">
+            <h2 style="font-size:12px;">EXPRESS<br>SHIPPING</h2>
+
+        </div>
+    </div>
+    <div class="city-div">
+        <div class="city-text">
+            <div class="div-culture">
+                <center>
+                    <h2
+                        style="margin-bottom: 0 !important; margin-top: 3rem !important; font-weight:600; letter-spacing: 3px; font-size: 2rem;">
+                        CULTURE CIRCLE
+                    </h2>
+                </center>
+
+                <h2 class="culture-global">GLOBAL</h2>
+            </div>
+        </div>
+
+    </div>
+    <div class="global-content">
+        <div class="global-grid">
+            <img src="https://culture-cirlce-static-dge7g8b8eue6fvcv.z02.azurefd.net/static/images/home/uae.jpeg"
+                style="width: 363px; height: 399px;">
+            <img src="https://culture-cirlce-static-dge7g8b8eue6fvcv.z02.azurefd.net/static/images/home/oman.jpeg"
+                style="width: 363px; height: 399px;">
+            <img src="https://culture-cirlce-static-dge7g8b8eue6fvcv.z02.azurefd.net/static/images/home/qatar.jpeg"
+                style="width: 363px; height: 399px;">
+            <img src="https://culture-cirlce-static-dge7g8b8eue6fvcv.z02.azurefd.net/static/images/home/singapore.jpeg"
+                style="width: 363px; height: 399px;">
+            <img src="https://culture-cirlce-static-dge7g8b8eue6fvcv.z02.azurefd.net/static/images/home/global_india.jpg"
+                style="width: 363px; height: 399px;">
+            <img src="https://culture-cirlce-static-dge7g8b8eue6fvcv.z02.azurefd.net/static/images/home/uk.jpeg"
+                style="width: 363px; height: 399px;">
+
+        </div>
+    </div>
+    <h1>
+        <center>
+            <img
+                src="https://culture-cirlce-static-dge7g8b8eue6fvcv.z02.azurefd.net/static/images/heading_banners/the-collection-desktop.jpg">
+    </h1>
+    </center>
+    <div class="container">
+        <div class="item">
+            <img src="https://culture-cirlce-static-dge7g8b8eue6fvcv.z02.azurefd.net/products/yebo35v2bo/yebo35v2bo_photo1.png"
+                alt="Yeezy Boost 350 V2 Bone">
+            <h2>Yeezy Boost 350 V2 Bone</h2>
+            <p>$ 6,299</p>
+        </div>
+        <div class="item">
+            <img src="https://culture-cirlce-static-dge7g8b8eue6fvcv.z02.azurefd.net/products/production/yebo35v2on/yebo35v2on_photo1.png"
+                alt="Yeezy Boost 350 V2 ONYX">
+            <h2>Yeezy Boost 350 V2 ONYX</h2>
+            <p>$ 11,799</p>
+        </div>
+        <div class="item">
+            <img src="https://culture-cirlce-static-dge7g8b8eue6fvcv.z02.azurefd.net/products/dulopa/dulopa_photo1.png"
+                alt="Dunk Low Panda">
+            <h2>Dunk Low Panda</h2>
+            <p>$ 6,299</p>
+        </div>
+        <div class="item">
+            <img src="https://culture-cirlce-static-dge7g8b8eue6fvcv.z02.azurefd.net/products/production/byeebov2dasa/byeebov2dasa_photo1.png"
+                alt="yeezy Boost 350 V2 Dark Salt">
+            <h2>yeezy Boost 350 V2 Dark Salt</h2>
+            <p>$ 12,099</p>
+        </div>
+        <div class="item">
+            <img src="https://culture-cirlce-static-dge7g8b8eue6fvcv.z02.azurefd.net/products/yebo35v2sa/yebo35v2sa_photo1.png"
+                alt="Yeezy Bosst V2 Salt">
+            <h2>Yeezy Bosst V2 Salt</h2>
+            <p>$ 14,799</p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="item">
+            <img src="https://culture-cirlce-static-dge7g8b8eue6fvcv.z02.azurefd.net/products/adye35v2cabe/adye35v2cabe_photo1.png"
+                alt="Adidas yeezy 350 V2 Carbon Beluga">
+            <h2>Adidas yeezy 350 V2 Carbon Beluga</h2>
+            <p>$ 11,399</p>
+        </div>
+        <div class="item">
+            <img src="https://culture-cirlce-static-dge7g8b8eue6fvcv.z02.azurefd.net/products/wmaijo1lopa/wmaijo1lopa_photo1.png"
+                alt="Air Jordan 1 Low Panda (W)">
+            <h2>Air Jordan 1 Low Panda (W)</h2>
+            <p>$ 7,399</p>
+        </div>
+        <div class="item">
+            <img src="https://cdn-images.farfetch-contents.com/22/91/35/91/22913591_53026917_1000.jpg"
+                alt="FENDI Small Sunshine Tote Bag">
+            <h2>FENDI Small Sunshine Tote Bag</h2>
+            <p class="price-tag">
+                $ 3,46,430
+            </p>
+        </div>
+        <div class="item">
+            <img src="https://culture-cirlce-static-dge7g8b8eue6fvcv.z02.azurefd.net/products/aijo1rehiogchlofo/aijo1rehiogchlofo_photo1.png"
+                alt="Air Jordan 1 Retro High Og Chicago Lost Found">
+            <h2>Air Jordan 1 Retro High Og Chicago Lost & Found</h2>
+            <p>$ 12,099</p>
+        </div>
+        <div class="item">
+            <img src="https://culture-cirlce-static-dge7g8b8eue6fvcv.z02.azurefd.net/products/maxaijoonerehognech/maxaijoonerehognech_photo1.png"
+                alt="Marvel x Air Jordan 1 Retro High Og Next Chapter">
+            <h2>Marvel x Air Jordan 1 Retro High Og Next Chapter</h2>
+            <p>$ 14,799</p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="item">
+            <img src="https://culture-cirlce-static-dge7g8b8eue6fvcv.z02.azurefd.net/products/adye35v2cabe/adye35v2cabe_photo1.png"
+                alt="Adidas yeezy 350 V2 Carbon Beluga">
+            <h2>Adidas yeezy 350 V2 Carbon Beluga</h2>
+            <p>$ 11,399</p>
+        </div>
+        <div class="item">
+            <img src="https://culture-cirlce-static-dge7g8b8eue6fvcv.z02.azurefd.net/products/bht/bht_photo1.png"
+                alt="Air Jordan 1 Low Alternate Royal Toe 2023">
+            <h2>Air Jordan 1 Low Alternate Royal Toe 2023</h2>
+            <p>$ 6,999</p>
+        </div>
+        <div class="item">
+            <img src="https://culture-cirlce-static-dge7g8b8eue6fvcv.z02.azurefd.net/products/baijo1reloogtrroaw/baijo1reloogtrroaw_photo1.png"
+                alt="Air Jordan 1 Retro Low Og Trophy Room Away">
+            <h2>Air Jordan 1 Retro Low Og Trophy Room Away</h2>
+            <p>$ 25,199</p>
+        </div>
+        <div class="item">
+            <img src="https://culture-cirlce-static-dge7g8b8eue6fvcv.z02.azurefd.net/products/jo4resbpigr/jo4resbpigr_photo1.png"
+                alt="Jordan 4 Retro SB Pine Green">
+            <h2>Jordan 4 Retro SB Pine Green</h2>
+            <p>$ 28,399</p>
+        </div>
+        <div class="item">
+            <img src="https://culture-cirlce-static-dge7g8b8eue6fvcv.z02.azurefd.net/products/trscxaijo1loogblph/trscxaijo1loogblph_photo1.png"
+                alt="Travis Scott x Air Jordan 1 Low Og Black Phantom">
+            <h2>Travis Scott x Air Jordan 1 Low Og Black Phantom</h2>
+            <p>$ 60,099</p>
+        </div>
+    </div>
+    <center>
+        <div class="culture-container">
+            <div class="culture-content">
+                <img src="https://culture-cirlce-static-dge7g8b8eue6fvcv.z02.azurefd.net/static/images/inexp-heading.png"
+                    style="height: 222px; width: 1296px;">
+            </div>
+        </div>
+    </center>
+    <center>
+        <div class="culture-container">
+            <div class="culture-content">
+                <img src="https://culture-cirlce-static-dge7g8b8eue6fvcv.z02.azurefd.net/static/images/home/store_delhi_india.jpg"
+                    style="height: 1167px; width: 1296px;">
+            </div>
+        </div>
+    </center>
+
+
+    <footer class="container-end">
+        <div class="row">
+            <div class="col-row">
+                <div class="col-mb">
+                    <h6 class="footer-heading">MOST VIEWED</h6>
+                    <ul class="list-style">
+                        <li class="li">under retail</li>
+                        <li class="li">Jordan 1</li>
+                        <li class="li">Jordan 4</li>
+                        <li class="li">Lows</li>
+                        <li class="li">Highs</li>
+                        <li class="li">Crocs</li>
+                        <li class="li">Adidas</li>
+                        <li class="li">Mids</li>
+                        <li class="li">Nike</li>
+                        <li class="li">yeezy</li>
+                        <li class="li">Golden Goose</li>
+                        <li class="li">Alexander Mcqueen</li>
+                        <li class="li">Dolce & Gabbana</li>
+                        <li class="li">Prada</li>
+                        <li class="li">Cactus Jack</li>
+                        <li class="li">Off White</li>
+                        <li class="li">Louis Vuitton</li>
+                        <li class="li">Vans</li>
+                        <li class="li">Dior</li>
+                        <li class="li">Converse</li>
+                    
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-row">
+                <div class="col-mb">
+                    <h6 class="footer-heading">KNOW MORE</h6>
+                    <ul class="list-style">
+                        <li class="li">About us</li>
+                        <li class="li">Cancellation & Returns</li>
+                        <li class="li">shipping</li>
+                        <li class="li">terms & Conditions</li>
+                        <li class="li">money back & gaurantee t&c</li>
+                        <li class="li">privacy policy</li>
+                        <li class="li">for resellers</li>
+                        <li class="li">
+                        <a href="{{ url_for('home') }}" class="menu-link">Home</a>
+    
+                    </li>
+                     <li class="li">
+                        <a href="{{ url_for('contact') }}" class="menu-link">CONTACT US</a>
+    
+                    </li>
+
+                    </ul>
+                </div>
+            </div>  
+            <div class="col-row">
+                <div class="col-mb">
+                    <h6 class="footer-heading">FOLLOW US </h6>
+                    <ul class="list-style">
+                        <li class="li"><img src="{{ url_for('static', filename='images/insta.png') }}"  alt="instagram" class="img-fluid" style="gap: 10px; margin: bottom 1px;"><img
+                                src="{{ url_for('static', filename='images/youtube.png') }}" alt="instagram" class="img-fluid"><img src="{{ url_for('static', filename='images/in.png') }}" alt="linkedin"
+                                class="img-fluid" style="margin-bottom: 3px;" >
+                        </li>
+
+                </div>
+            </div>
+        </div>
+        <center style="padding-left: 550px;" class="copy_container">
+            <p class="copy_container">© 2026 CultureCircle - All rights reserved </p>
+            <p class="copy_container">METACIRCLES TECHOLOGIES PVT.LTD.</p>
+        </center>
+
+
+
+    </footer>
+
+
+
+</body>
+
+</html> 
