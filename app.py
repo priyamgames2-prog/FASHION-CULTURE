@@ -6,7 +6,7 @@ app.secret_key = os.environ.get("SECRET_KEY", "my-secret-key")
 
 
 USERS={
-    "demo@priyam.com" : "culture123"
+    "priyamrathod05@gmail.com" : "culture123"
 }
 
 
