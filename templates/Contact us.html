@@ -6,56 +6,159 @@
         body {
             margin: 0;
             font-family: Martian Mono;
+            background: linear-gradient(135deg,
+                    #0B0B0B 0%,
+                    #1E1E1E 50%,
+                    #2A2A2A 100%);
         }
 
-        .header {
-            background-color: #fff;
-            padding: 15px 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 0 5px 0 rgb(0 0 0 / 39%);
+        :root {
+            --espresso: #2b2420;
+            --espresso-deep: #1a1512;
+            --parchment: #ece4d5;
+            --cream: #f7f4ee;
+            --gold: #c9a227;
+            --gold-soft: rgba(201, 162, 39, 0.35);
+            --glass-fill: rgba(247, 244, 238, 0.10);
+            --glass-border: rgba(247, 244, 238, 0.28);
+            --mono: 'Martian Mono', monospace;
+            --script: 'Cormorant Garamond', serif;
         }
 
-        .logo {
-            display: flex !important;
-            justify-content: center !important;
-            flex: 0 0 auto;
-            width: 8.33333333%;
-        }
-
-        .nav {
-            display: flex;
-            list-style: none;
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
 
-        .nav li {
-            margin-right: 20px;
-        }
 
-        .nav a {
-            text-decoration: none;
-            color: #000;
-        }
+        .hero {
+            position: relative;
 
-        .releases-text {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
             overflow: hidden;
-            width: 100%;
-            padding: 1rem;
-            text-align: center !important;
+            display: flex;
+            flex-direction: column;
         }
+
+        /* Stand-in street scene — swap for your real photo via background-image */
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background-blend-mode: normal, multiply, normal;
+            filter: saturate(0.85);
+        }
+
+        .hero-bg::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: repeating-linear-gradient(115deg, rgba(0, 0, 0, 0.05) 0 2px, transparent 2px 6px);
+            mix-blend-mode: overlay;
+            opacity: 0.4;
+        }
+
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* ===== NAV ===== */
+        .navbar {
+            position: relative;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            padding: 20px clamp(20px, 4vw, 56px);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .logo-mark {
+            width: 38px;
+            height: 38px;
+            border: 1.5px solid var(--gold);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 9px;
+            letter-spacing: 0.5px;
+            line-height: 1.15;
+            text-align: center;
+            color: var(--gold);
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .logo-text {
+            font-size: 15px;
+            letter-spacing: 3px;
+            color: var(--cream);
+            font-weight: 500;
+        }
+
+        .nav-pill {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            background: var(--glass-fill);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border: 1px solid var(--glass-border);
+            border-radius: 999px;
+            padding: 6px;
+        }
+
+        .nav-pill a {
+            text-decoration: none;
+            color: var(--parchment);
+            font-size: 11px;
+            letter-spacing: 1px;
+            padding: 10px 16px;
+            border-radius: 999px;
+            transition: background 0.25s ease, color 0.25s ease;
+            white-space: nowrap;
+        }
+
+        .nav-pill a:hover {
+            background: rgba(201, 162, 39, 0.18);
+            color: var(--gold);
+        }
+
+        .nav-cta {
+            font-size: 11px;
+            letter-spacing: 1px;
+            color: var(--espresso-deep);
+            background: var(--gold);
+            padding: 12px 20px;
+            border-radius: 999px;
+            text-decoration: none;
+            white-space: nowrap;
+            box-shadow: 0 4px 18px rgba(201, 162, 39, 0.25);
+        }
+
+        .nav-toggle {
+            display: none;
+        }
+
+        /* ===== HERO CONTENT ===== */
+
 
         .text-container {
             max-width: 62.5%;
             padding: 0px 50px;
+            margin-left: 300px;
         }
 
         .section-heading {
+            color: #F5F5F5;
             font-size: 1.8rem;
             font-weight: 900;
             text-align: center;
@@ -64,6 +167,7 @@
         }
 
         .section-heading-p {
+            color: #D1D5DB;
             margin-top: 0;
             margin-bottom: 1rem;
             text-align: justify;
@@ -71,7 +175,7 @@
             padding-bottom: 1.5rem !important;
         }
 
-        
+
         button {
             background-color: #fff;
             border: 1px solid #25D366;
@@ -191,39 +295,49 @@
             font-size: 2.4rem;
             font-weight: 900;
         }
-        .menu-link{
+
+        .menu-link {
 
             color: white;
             text-decoration: none;
             font-size: 18px;
             font-family: "Times New Roman", serif;
         }
-        .menu-link:hover{
-            color:#18bcbd;
+
+        .menu-link:hover {
+            color: #18bcbd;
             text-decoration: none;
         }
     </style>
 </head>
 
 <body>
-    <header class="header">
-        <div class="logo">
-            <img src="https://media.licdn.com/dms/image/v2/D4D0BAQHx97w2cnu0GA/company-logo_200_200/company-logo_200_200/0/1687244553808/culture_circle_logo?e=2147483647&v=beta&t=RS7to56jrk39EFhRpd224p10ccuRj9n7bINIhFnARH4"
-                alt="Cult Ure Logo" style="height: 45px; width: 45px;">
+    <section class="hero">
 
-        </div>
-        <nav class="nav">
-            <li><a href="{{ url_for('home') }}">HOME</a>
-            </li>
-             <li><a href="#">CUSTOMS</a></li>
-            <li><a href="#">SNEAKERS</a></li>
-            <li><a href="#">STREETWEAR</a></li>
-            <li><a href="{{ url_for('contact') }}">CONTACT US</a></li>
-            <li><a href="#">FOR SELLERS</a></li>
-            <li><a href="#">FOR FAQ</a></li>
-            <li><a href="#">TRACK ORDER</a></li>
+
+        <nav class="navbar">
+            <a class="logo" href="#">
+                <div class="logo-mark">
+                    <img src="{{ url_for('static', filename='images/culture_circle_logo.jpg') }}" alt="">
+                </div>
+                <span class="logo-text">CULTURE</span>
+            </a>
+
+            <div class="nav-pill">
+                <a href="{{ url_for('home') }}">Home</a>
+                <a href="#">Customs</a>
+                <a href="#">Sneakers</a>
+                <a href="#">Streetwear</a>
+                <a href="{{ url_for('contact') }}">Contact Us</a>
+                <a href="#">For Sellers</a>
+                <a href="#">For FAQ</a>
+            </div>
+
+            <a class="nav-cta" href="#">Track Order</a>
         </nav>
 
+
+    </section>
     </header>
     <div class="releases-text">
         <div class="text-container">
@@ -246,10 +360,12 @@
                 Till then, keep dripping 🍻
             </p>
             <p class="section-heading-p">
-                <center>
+                <center style="color: #E5E5E5;">
                     Sincerely,
                     <br>
                     Team Culture Circle
+                </center>
+                <center>
                     <br>
                     <br><br>
 
@@ -310,15 +426,15 @@
                         <li class="li">terms & Conditions</li>
                         <li class="li">money back & gaurantee t&c</li>
                         <li class="li">privacy policy</li>
-                       <li class="li">for resellers</li>
-                       <li class="li">
-                        <a href="{{ url_for('home') }}" class="menu-link">Home</a>
-    
-                    </li>
-                     <li class="li">
-                        <a href="{{ url_for('contact') }}" class="menu-link">Contact Us</a>
-    
-                    </li>
+                        <li class="li">for resellers</li>
+                        <li class="li">
+                            <a href="{{ url_for('home') }}" class="menu-link">Home</a>
+
+                        </li>
+                        <li class="li">
+                            <a href="{{ url_for('contact') }}" class="menu-link">Contact Us</a>
+
+                        </li>
 
                     </ul>
                 </div>
@@ -327,9 +443,11 @@
                 <div class="col-mb">
                     <h6 class="footer-heading">FOLLOW US </h6>
                     <ul class="list-style">
-                       <li class="li"><img src="{{ url_for('static', filename='images/insta.png') }}"  alt="instagram" class="img-fluid" style="gap: 10px; margin: bottom 1px;"><img
-                                src="{{ url_for('static', filename='images/youtube.png') }}" alt="instagram" class="img-fluid"><img src="{{ url_for('static', filename='images/in.png') }}" alt="linkedin"
-                                class="img-fluid" style="margin-bottom: 3px;" >
+                        <li class="li"><img src="{{ url_for('static', filename='images/insta.png') }}" alt="instagram"
+                                class="img-fluid" style="gap: 10px; margin: bottom 1px;"><img
+                                src="{{ url_for('static', filename='images/youtube.png') }}" alt="instagram"
+                                class="img-fluid"><img src="{{ url_for('static', filename='images/in.png') }}"
+                                alt="linkedin" class="img-fluid" style="margin-bottom: 3px;">
                         </li>
 
                 </div>
